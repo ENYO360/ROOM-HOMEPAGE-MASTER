@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forward and Backward Slider</title>
+    <style>
+        /* Style for the slider container */
+        #slider {
+            width: 300px;
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="slider">
+    <button id="backwardBtn" onclick="navigate('backward')">Backward</button>
+    <span id="displayItem"></span>
+    <button id="forwardBtn" onclick="navigate('forward')">Forward</button>
+</div>
+
+<script>
+// Define an array of items
+const items = ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4', 'Slide 5'];
+
+// Initialize a counter for current item index
+let currentIndex = 0;
+
+// Get references to HTML elements
+const displayItem = document.getElementById('displayItem');
+
+// Function to navigate through the slides
+function navigate(direction) {
+    if (direction === 'forward') {
+        currentIndex++;
+        if (currentIndex >= items.length) {
+            currentIndex = 0;
+        }
+    } else if (direction === 'backward') {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = items.length - 1;
+        }
+    }
+
+    // Display the current item
+    displayItem.textContent = items[currentIndex];
+}
+
+// Display initial item
+displayItem.textContent = items[currentIndex];
+</script>
+
+</body>
+</html>
