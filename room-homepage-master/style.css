@@ -1,0 +1,317 @@
+* {
+margin: 0; 
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr min-content 1fr;
+    grid-template-rows: 60% 35% 10px;
+    grid-template-areas: 
+    'header header slider section1'
+    'section2 section3 section3 section4'
+    'attribution attribution attribution attribution';
+    height: 100%;
+}
+
+@media all and (max-width: 750px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        'header header header'
+        'section1 section1 section1'
+        'section2 section2 section2'
+        'section3 section3 section3'
+        'section4 section4 section4'
+        'attribution attribution attribution';
+
+    }
+}
+
+
+header {
+    display: flex;
+    padding: 2.5rem 0 0 4rem;
+    gap: 2rem;
+    grid-area: header;
+    background-image: url(images/desktop-image-hero-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+}
+
+@media all and (max-width: 750px) {
+    header {
+        margin: 0;
+        background-image: url(images/mobile-image-hero-1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+        align-items: start;
+        display: grid;
+        height: 380px;
+    }
+}
+
+#hamburger, #toggle-close {
+    display: none;
+    width: max-content;
+    height: max-content;
+    background: none;
+    border: none;
+}
+
+#hamburger:hover {
+    cursor: pointer;
+}
+
+#toggle-close:hover {
+    cursor: pointer;
+}
+
+@media all and (max-width: 750px) {
+    #hamburger {
+        display: block;
+        position: fixed;
+        z-index: 999;
+        left: 20px;
+    }
+    #toggle-close {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 20px;
+    }
+}
+
+nav {
+    height: 300px;
+}
+
+@media all and (max-width: 750px) {
+    nav {
+        height: 100px;
+        background: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        display: none;
+    }
+}
+
+header > img {
+    width: min-content;
+    height: min-content;
+}
+
+@media all and (max-width: 750px) {
+    header > img {
+        margin-left: 7rem;
+    }
+}
+
+.nav-cointainer > ul {
+    display: flex;
+}
+
+@media all and (max-width: 750px) {
+    .nav-cointainer > ul {
+        margin: 7% 0 8% 10%;
+        flex-wrap: wrap;
+    }
+}
+
+ul > li {
+    padding-right: 30px;
+    list-style: none;
+}
+
+li > a {
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    font-size: 12px;
+}
+
+@media all and (max-width: 750px) {
+    li > a {
+        color: black;
+    }
+}
+
+li > a:hover {
+    border-bottom: 3px solid white;
+    cursor: pointer;
+}
+
+.section1 {
+    grid-area: section1;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-container > h2 {
+    padding: 1rem 1rem 1rem 0;
+    font-weight: 700;
+}
+
+@media all and (max-width: 750px) {
+    .slide-container > h2 {
+        text-align: left;
+        padding: 3rem 1.5rem 1rem 1.5rem;
+    }
+}
+
+.slide-container > p {
+    padding: 0 2rem 1rem 0;
+    color: hsl(0, 0%, 63%);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+@media all and (max-width: 750px) {
+    .slide-container > p {
+        text-align: left;
+        padding: 0 1.5rem 2.5rem 1.5rem;
+    }
+}
+
+.slide-container > a {
+    padding: 0 0 1rem 0;
+    text-decoration: none;
+    letter-spacing: 10px;
+    color: hsl(0, 0%, 0%);
+    font-weight: 600;
+}
+
+@media all and (max-width: 750px) {
+    .slide-container > a {
+        text-align: left;
+        padding: 3rem 1.5rem 1rem 1.5rem;
+    }
+}
+
+.slide-container > a:hover {
+    color: hsl(0, 0%, 63%);
+}
+
+.section2 {
+    grid-area: section2; 
+}
+
+@media all and (max-width: 750px) {
+    .section2 {
+        margin-block: 4rem 1rem;
+    }
+}
+
+.section2 > img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.section3 {
+    grid-area: section3;
+    margin-block: auto;
+}
+
+.section3 > h4 {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: hsl(0, 0%, 0%);
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+}
+
+@media all and (max-width: 750px) {
+    .section3 > h4 {
+        text-align: left;
+        padding: 2rem 1.5rem 1rem 1.5rem;
+    }
+}
+
+/* @media all and (max-width: 1065px) {
+    .section3 > h3 {
+        padding: 2rem 1rem 1rem 3rem;
+    }
+} */
+
+.section3 > p {
+    font-weight: 500;
+    font-size: 12px;
+    text-align: justify;
+    color: hsl(0, 0%, 63%);
+    line-height: 15px;
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+@media all and (max-width: 750px) {
+    .section3 > p {
+        text-align: left;
+        padding: 0 1.5rem 2.5rem 1.5rem;
+    }
+}
+
+.section4 {
+    grid-area: section4;
+}
+
+.section4 > img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.child2, .child3 {
+    display: none;
+}
+
+.slider-container {
+    grid-area: slider;
+    background-color: black;
+    height: 30px;
+    display: flex;
+    width: fit-content;
+    margin-top: auto;
+}
+
+@media all and (max-width: 750px) {
+    .slider-container {
+        position: absolute;
+        width: max-content;
+        right: 0;
+        top: 390px;
+        
+    }
+}
+
+.slider-container > img {
+    height: 16px;
+    margin: 0;
+    padding: 7px 12px 7px 12px;
+}
+
+.slider-container > img:hover {
+    background-color: hsl(0, 0%, 27%);
+    cursor: pointer;
+}
+
+.attribution {
+    grid-area: attribution;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}
